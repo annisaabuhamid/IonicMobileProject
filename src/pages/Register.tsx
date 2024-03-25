@@ -1,5 +1,7 @@
 import {
-    IonButton,
+    IonBackButton,
+  IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonContent,
@@ -9,14 +11,22 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonRouter,
 } from "@ionic/react";
-import { checkmarkDoneCircleOutline, checkmarkDoneOutline, logInOutline, personCircleOutline } from "ionicons/icons";
+import {
+  checkmarkDoneCircleOutline,
+  checkmarkDoneOutline,
+  logInOutline,
+  personCircleOutline,
+} from "ionicons/icons";
 import React from "react";
 
 const Register: React.FC = () => {
+  const router = useIonRouter();
   const doRegister = (event: any) => {
     event.preventDefault();
-    console.log('doRegister')
+    console.log("doRegister");
+    router.goBack();
   };
 
   return (
@@ -24,6 +34,9 @@ const Register: React.FC = () => {
       <IonHeader>
         <IonToolbar color={"primary"}>
           <IonTitle>Create Account</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent scrollY={false}>
