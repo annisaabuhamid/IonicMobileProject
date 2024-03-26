@@ -16,7 +16,6 @@ import {
   import { triangle, ellipse, square } from "ionicons/icons";
   
   const Settings: React.FC = () => {
-    console.log("Menu page");
   
     return (
         <IonApp>
